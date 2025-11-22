@@ -8,6 +8,9 @@
   --sev-gray-light: #E5E7EB;
   --sev-gray-medium: #9CA3AF;
   --sev-white: #FFFFFF;
+  --sev-ink: #0B1120;
+  --sev-sand: #FDF8F3;
+  --sev-shadow: rgba(17, 24, 39, 0.08);
 
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
@@ -153,6 +156,7 @@ ul {
   text-decoration: none;
   color: var(--sev-text);
   padding-bottom: 0.25rem;
+  transition: color 0.2s ease;
 }
 
 .nav-link::after {
@@ -262,6 +266,8 @@ ul {
 .home-section {
   padding: 2.5rem 0;
   border-bottom: 1px solid rgba(17, 24, 39, 0.05);
+  position: relative;
+  z-index: 1;
 }
 
 .home-section:last-of-type {
@@ -354,8 +360,8 @@ ul {
   background-color: var(--sev-white);
   padding: 1.5rem;
   border-radius: 1.25rem;
-  border: 1px solid rgba(17, 24, 39, 0.08);
-  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.04);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  box-shadow: 0 10px 25px var(--sev-shadow);
 }
 
 .product-name {
