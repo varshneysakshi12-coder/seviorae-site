@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Browse by Concern | Sevioraè</title>
-  <meta name="description" content="Explore the skin concerns Sevioraè blends are being designed for." />
+  <title>The Skin Library | Browse by Concern</title>
+  <meta name="description" content="Explore the Sevioraè formulation library, organized by specific skin concerns and research goals." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/components.css" />
 </head>
@@ -49,52 +55,132 @@
     </header>
 
     <main id="main-content" class="site-main" role="main">
-      <div class="container">
-        <section class="home-section">
-          <header class="section-header">
-            <h1 class="section-title">Browse by skin concern</h1>
-            <p class="section-subtitle">
-              Sevioraè is anchored in concern-first formulation. Explore what will be available at launch and what is planned as research expands.
+      
+      <!-- HERO -->
+      <section class="concerns-hero">
+        <div class="container">
+          <div class="hero-center-content fade-up">
+            <span class="hero-kicker">The Formulation Library</span>
+            <h1 class="hero-title">Diagnose your ritual.</h1>
+            <p class="hero-subtitle">
+              Sevioraè is anchored in concern-first formulation. Select your primary skin goal to discover the dedicated blend.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        
+        <!-- SECTION 1: AVAILABLE (The Library Cards) -->
+        <section class="home-section">
+          <header class="section-header fade-up">
+            <h2 class="section-title">The Founding Collection</h2>
+            <p class="section-subtitle">Formulations currently available for purchase.</p>
           </header>
 
-          <div class="card-grid card-grid--concerns">
-            <div class="concern-group">
-              <h2 class="concern-group-title">Available at launch</h2>
-              <p class="concern-note">Five founding blends you can preview today:</p>
-              <ul class="concern-list">
-                <li><a href="/products/acne-prone-skin/">Acne-Prone Skin</a></li>
-                <li><a href="/products/dark-spot-pigmentation/">Dark Spot &amp; Pigmentation</a></li>
-                <li><a href="/products/oily-skin-pore-reduction/">Oily Skin &amp; Pore Balance</a></li>
-                <li><a href="/products/skin-barrier-repair/">Skin Barrier Repair</a></li>
-                <li><a href="/products/anti-aging/">Anti-Aging</a></li>
-              </ul>
-            </div>
+          <div class="library-grid">
+            
+            <!-- Card 1 -->
+            <a href="/products/acne-prone-skin/" class="library-card fade-up">
+              <div class="library-card-header">
+                <span class="code">No. 01</span>
+                <span class="status-dot"></span>
+              </div>
+              <h3 class="library-title">Acne-Prone Skin</h3>
+              <p class="library-desc">Balancing clarity without stripping the barrier. For congestion and breakouts.</p>
+              <div class="library-footer">
+                <span class="btn-link">View Formulation &rarr;</span>
+              </div>
+            </a>
 
-            <div class="concern-group">
-              <h2 class="concern-group-title">How the concern list grows</h2>
-              <p class="concern-note">
-                Roadmap concerns are in research and scent/texture exploration. We will only launch once safety, stability and ritual experience feel ready.
-              </p>
-              <ul class="concern-list concern-list--columns">
-                <li>Sensitive Skin Calming</li>
-                <li>Melasma &amp; Sun Spots</li>
-                <li>Post-Inflammatory Pigmentation</li>
-                <li>Rosacea-friendly support</li>
-                <li>Seborrheic Dermatitis comfort</li>
-                <li>Eczema-prone nourishment</li>
-                <li>Psoriasis-adjacent care</li>
-                <li>Texture refinement</li>
-                <li>Vitamin C Brightening</li>
-                <li>Sun protection complement</li>
-                <li>Broken capillaries focus</li>
-                <li>Puffiness &amp; lymphatic support</li>
-                <li>Stretch mark support</li>
-                <li>Under-eye dark circles</li>
-              </ul>
-            </div>
+            <!-- Card 2 -->
+            <a href="/products/dark-spot-pigmentation/" class="library-card fade-up" style="transition-delay: 0.1s;">
+              <div class="library-card-header">
+                <span class="code">No. 02</span>
+                <span class="status-dot"></span>
+              </div>
+              <h3 class="library-title">Dark Spots &amp; Pigmentation</h3>
+              <p class="library-desc">Targeting uneven tone, sun spots, and post-acne marks.</p>
+              <div class="library-footer">
+                <span class="btn-link">View Formulation &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="/products/oily-skin-pore-reduction/" class="library-card fade-up" style="transition-delay: 0.2s;">
+              <div class="library-card-header">
+                <span class="code">No. 03</span>
+                <span class="status-dot"></span>
+              </div>
+              <h3 class="library-title">Oily Skin &amp; Pores</h3>
+              <p class="library-desc">Refining texture and regulating sebum for a matte, healthy finish.</p>
+              <div class="library-footer">
+                <span class="btn-link">View Formulation &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="/products/skin-barrier-repair/" class="library-card fade-up" style="transition-delay: 0.3s;">
+              <div class="library-card-header">
+                <span class="code">No. 04</span>
+                <span class="status-dot"></span>
+              </div>
+              <h3 class="library-title">Skin Barrier Repair</h3>
+              <p class="library-desc">Restorative lipid support for damaged, sensitized, or fragile skin.</p>
+              <div class="library-footer">
+                <span class="btn-link">View Formulation &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="/products/anti-aging/" class="library-card fade-up" style="transition-delay: 0.4s;">
+              <div class="library-card-header">
+                <span class="code">No. 05</span>
+                <span class="status-dot"></span>
+              </div>
+              <h3 class="library-title">Anti-Aging &amp; Elasticity</h3>
+              <p class="library-desc">Supporting collagen, plumping fine lines, and restoring youthful bounce.</p>
+              <div class="library-footer">
+                <span class="btn-link">View Formulation &rarr;</span>
+              </div>
+            </a>
+
           </div>
         </section>
+
+        <!-- SECTION 2: THE LAB (Future) -->
+        <section class="home-section lab-section fade-up">
+          <div class="lab-container">
+            <header class="section-header">
+              <span class="hero-kicker" style="border-color: #999; color: #666;">In Development</span>
+              <h2 class="section-title">The Research Pipeline</h2>
+              <p class="section-subtitle">
+                Our formulation roadmap. We are currently reviewing literature and testing stability for these specific concerns.
+              </p>
+            </header>
+
+            <div class="lab-matrix">
+              <span class="lab-tag">Sensitive Skin Calming</span>
+              <span class="lab-tag">Melasma Support</span>
+              <span class="lab-tag">Post-Inflammatory Erythema</span>
+              <span class="lab-tag">Rosacea Care</span>
+              <span class="lab-tag">Seborrheic Dermatitis</span>
+              <span class="lab-tag">Eczema Relief</span>
+              <span class="lab-tag">Psoriasis Care</span>
+              <span class="lab-tag">Vitamin C Brightening</span>
+              <span class="lab-tag">Sun Protection Boost</span>
+              <span class="lab-tag">Broken Capillaries</span>
+              <span class="lab-tag">Lymphatic Drainage</span>
+              <span class="lab-tag">Stretch Marks</span>
+              <span class="lab-tag">Under-Eye Circles</span>
+            </div>
+            
+            <p class="lab-note">
+              *Join our newsletter to be notified when these formulations move to clinical testing.
+            </p>
+          </div>
+        </section>
+
       </div>
     </main>
 
@@ -141,7 +227,3 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-

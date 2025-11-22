@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Sevioraè | Waitlist & Queries</title>
-  <meta name="description" content="Reach Sevioraè for questions or to join the waitlist." />
+  <title>Contact Sevioraè | Concierge & Inquiries</title>
+  <meta name="description" content="Get in touch with Sevioraè regarding formulations, orders, or press inquiries." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/components.css" />
 </head>
@@ -50,45 +56,89 @@
 
     <main id="main-content" class="site-main" role="main">
       <div class="container">
-        <section class="home-section">
-          <header class="section-header">
-            <h1 class="section-title">Contact Sevioraè</h1>
-            <p class="section-subtitle">
-              Questions about the blends, partnerships or press? Use the form below or email us directly.
-            </p>
-          </header>
-          <p>
-            Email: <a href="mailto:care@seviorae.com">care@seviorae.com</a><br />
-            Instagram: <a href="https://instagram.com/seviorae" rel="noopener" target="_blank">@seviorae</a>
-          </p>
+        
+        <section class="home-section contact-section">
+          <div class="contact-layout">
+            
+            <!-- LEFT COLUMN: INFO -->
+            <div class="contact-info fade-up">
+              <header class="contact-header">
+                <span class="hero-kicker">Concierge</span>
+                <h1 class="section-title">Get in Touch</h1>
+                <p class="section-subtitle">
+                  Whether you have questions about specific ingredients, need guidance on a ritual, or wish to discuss a partnership, we are here.
+                </p>
+              </header>
+
+              <div class="contact-details">
+                <div class="detail-block">
+                  <h3 class="detail-label">General Inquiries</h3>
+                  <a href="mailto:care@seviorae.com" class="detail-link">care@seviorae.com</a>
+                </div>
+
+                <div class="detail-block">
+                  <h3 class="detail-label">Social</h3>
+                  <a href="https://instagram.com/seviorae" target="_blank" rel="noopener" class="detail-link">Instagram ↗</a>
+                </div>
+
+                <div class="detail-block">
+                  <h3 class="detail-label">Registered Entity</h3>
+                  <p class="detail-text">
+                    Namah Group Product & Services (OPC) Pvt Ltd.<br>
+                    India
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: GLASS FORM -->
+            <div class="contact-form-wrapper fade-up" style="transition-delay: 0.2s;">
+              <form class="glass-form" action="mailto:care@seviorae.com" method="post" enctype="text/plain">
+                <h2 class="form-heading">Send a message</h2>
+                
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input class="glass-input" type="text" id="name" name="name" placeholder=" " required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input class="glass-input" type="email" id="contact-email" name="email" placeholder=" " required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <div class="select-wrapper">
+                    <select class="glass-input" id="subject" name="subject">
+                      <option value="Product Question">Product Question</option>
+                      <option value="Order Support">Order Support</option>
+                      <option value="Press/Partnership">Press / Partnership</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="glass-input glass-textarea" id="message" name="message" placeholder=" " required></textarea>
+                </div>
+
+                <div class="form-footer">
+                  <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                  <p class="form-note">
+                    We aim to reply within 48 hours, Monday through Friday.
+                  </p>
+                </div>
+              </form>
+            </div>
+
+          </div>
         </section>
 
-        <section class="home-section">
-          <h2 class="section-title">Send a message</h2>
-          <form class="email-form" action="mailto:care@seviorae.com" method="post" enctype="text/plain">
-            <div class="email-form-row email-form-row--stacked">
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input class="text-input" type="text" id="name" name="name" required />
-              </div>
-              <div class="form-field">
-                <label for="contact-email">Email</label>
-                <input class="text-input" type="email" id="contact-email" name="email" required />
-              </div>
-              <div class="form-field">
-                <label for="message">Message</label>
-                <textarea class="textarea-input" id="message" name="message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Send</button>
-            </div>
-            <p class="email-form-note">
-              By submitting, you consent to be contacted about Sevioraè updates. We reply within 2–3 working days during the pilot phase.
-            </p>
-          </form>
-        </section>
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
       <div class="container footer-inner">
         <div class="footer-column">
@@ -132,7 +182,3 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-

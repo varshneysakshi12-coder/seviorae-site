@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <!-- Responsive viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Basic SEO meta -->
-  <title>Sevioraè© â€“ Research-informed Facial Oil Blends</title>
-  <meta name="description" content="Sevioraè© creates research-informed facial oil blends for specific skin concerns like acne-prone skin, dark spots, oily skin and skin-barrier repair, crafted in India." />
-
-  <!-- Robots -->
+  <title>Sevioraè© – Research-informed Facial Oil Blends</title>
+  <meta name="description" content="Sevioraè© creates research-informed facial oil blends..." />
   <meta name="robots" content="index,follow" />
-
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" />
 
-  <!-- Main stylesheet -->
+  <!-- PRELOAD FONTS FOR PERFORMANCE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./assets/css/main.css" />
   <link rel="stylesheet" href="./assets/css/components.css" />
 </head>
@@ -152,55 +148,84 @@
           </div>
         </section>
 
-        <!-- SECTION: BY CONCERN GRID -->
-        <section class="home-section">
+        <!-- SECTION: BROWSE BY CONCERN -->
+        <section class="home-section concern-section">
           <header class="section-header">
-            <h2 class="section-title">Browse by skin concern</h2>
+            <span class="hero-kicker">Curated Formulations</span>
+            <h2 class="section-title">Browse by Skin Concern</h2>
             <p class="section-subtitle">
-              Sevioraè© is being built around specific concerns. Five are part of the founding collection; the rest are in formulation and will follow as the range expands.
+              Targeted solutions for specific skin stories.
             </p>
           </header>
 
-          <div class="card-grid card-grid--concerns">
-            <!-- Available concerns -->
-            <div class="concern-group">
-              <h3 class="concern-group-title">Available at launch</h3>
-              <ul class="concern-list">
-                <li><a href="/products/acne-prone-skin/">Acne-Prone Skin</a></li>
-                <li><a href="/products/dark-spot-pigmentation/">Dark Spot Removal / Pigmentation</a></li>
-                <li><a href="/products/oily-skin-pore-reduction/">Oily Skin / Pore Reduction</a></li>
-                <li><a href="/products/skin-barrier-repair/">Skin Barrier Repair</a></li>
-                <li><a href="/products/anti-aging/">Anti-Aging</a></li>
-              </ul>
-            </div>
+          <!-- Part 1: The Active Mosaic (Available Now) -->
+          <div class="concern-mosaic">
+            <a href="/products/acne-prone-skin/" class="concern-tile">
+              <span class="concern-icon">✦</span>
+              <span class="concern-label">Acne-Prone &amp; Clarity</span>
+              <span class="concern-arrow">→</span>
+            </a>
 
-            <!-- Coming soon concerns -->
-            <div class="concern-group">
-              <h3 class="concern-group-title">Planned blends (coming later)</h3>
-              <ul class="concern-list concern-list--columns">
-                <li>Sensitive Skin Calming</li>
-                <li>Melasma / Sun Spots</li>
-                <li>Post-Inflammatory Pigmentation</li>
-                <li>Rosacea</li>
-                <li>Seborrheic Dermatitis</li>
-                <li>Eczema / Dermatitis</li>
-                <li>Psoriasis</li>
-                <li>Anti-Wrinkle / Elasticity</li>
-                <li>Vitamin C Brightening</li>
-                <li>Sun Protection Enhancement</li>
-                <li>Broken Capillaries / Spider Veins</li>
-                <li>Lymphatic Drain / Puffiness</li>
-                <li>Stretch Marks / Scar Support</li>
-                <li>Under Eye Dark Circles</li>
-              </ul>
-              <p class="concern-note">
-                These areas are part of the long-term roadmap. Blends will be announced only after careful formulation and testing.
-              </p>
-            </div>
+            <a href="/products/anti-aging/" class="concern-tile">
+              <span class="concern-icon">✧</span>
+              <span class="concern-label">Anti-Aging &amp; Elasticity</span>
+              <span class="concern-arrow">→</span>
+            </a>
+
+            <a href="/products/dark-spot-pigmentation/" class="concern-tile">
+              <span class="concern-icon">✦</span>
+              <span class="concern-label">Dark Spots &amp; Hyper-pigmentation</span>
+              <span class="concern-arrow">→</span>
+            </a>
+
+            <a href="/products/oily-skin-pore-reduction/" class="concern-tile">
+              <span class="concern-icon">✧</span>
+              <span class="concern-label">Oily Skin &amp; Pore Balance</span>
+              <span class="concern-arrow">→</span>
+            </a>
+
+            <a href="/products/skin-barrier-repair/" class="concern-tile">
+              <span class="concern-icon">✦</span>
+              <span class="concern-label">Skin Barrier Repair</span>
+              <span class="concern-arrow">→</span>
+            </a>
+            
+            <!-- "View All" Tile -->
+            <a href="/concerns/" class="concern-tile concern-tile--all">
+              <span class="concern-label">View Full Index</span>
+            </a>
           </div>
 
-          <div class="section-actions">
-            <a href="/concerns/" class="btn btn-secondary">View concern index</a>
+          <!-- Part 2: The Lab Roadmap (Future) -->
+          <div class="roadmap-container">
+            <div class="roadmap-divider">
+              <span class="roadmap-badge">In The Lab</span>
+            </div>
+            
+            <div class="roadmap-content">
+              <h3 class="roadmap-title">Future Formulations</h3>
+              <p class="roadmap-text">
+                Our research pipeline is active. The following blends are currently in development phases, ranging from literature review to stability testing:
+              </p>
+              <div class="roadmap-list-editorial">
+                <span>Sensitive Skin Calming</span> <span class="dot">•</span>
+                <span>Melasma</span> <span class="dot">•</span>
+                <span>Post-Inflammatory Erythema</span> <span class="dot">•</span>
+                <span>Rosacea Support</span> <span class="dot">•</span>
+                <span>Seborrheic Dermatitis</span> <span class="dot">•</span>
+                <span>Eczema Relief</span> <span class="dot">•</span>
+                <span>Psoriasis Care</span> <span class="dot">•</span>
+                <span>Vitamin C Brightening</span> <span class="dot">•</span>
+                <span>Sun Protection Boost</span> <span class="dot">•</span>
+                <span>Broken Capillaries</span> <span class="dot">•</span>
+                <span>Lymphatic Drainage</span> <span class="dot">•</span>
+                <span>Stretch Marks</span> <span class="dot">•</span>
+                <span>Under-Eye Circles</span>
+              </div>
+              <p class="roadmap-note">
+                *Join the newsletter to be notified when specific concerns move to clinical testing.
+              </p>
+            </div>
           </div>
         </section>
 
