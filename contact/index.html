@@ -52,9 +52,38 @@
         <section class="home-section">
           <header class="section-header">
             <h1 class="section-title">Contact SevioraAc</h1>
-            <p class="section-subtitle">A simple form or contact details will be shared here.</p>
+            <p class="section-subtitle">
+              Questions about the blends, partnerships or press? Use the form below or email us directly.
+            </p>
           </header>
-          <p>Detailed content is in progress.</p>
+          <p>
+            Email: <a href="mailto:care@seviorae.com">care@seviorae.com</a><br />
+            Instagram: <a href="https://instagram.com/seviorae" rel="noopener" target="_blank">@seviorae</a>
+          </p>
+        </section>
+
+        <section class="home-section">
+          <h2 class="section-title">Send a message</h2>
+          <form class="email-form" action="mailto:care@seviorae.com" method="post" enctype="text/plain">
+            <div class="email-form-row email-form-row--stacked">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input class="text-input" type="text" id="name" name="name" required />
+              </div>
+              <div class="form-field">
+                <label for="contact-email">Email</label>
+                <input class="text-input" type="email" id="contact-email" name="email" required />
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea class="textarea-input" id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+            <p class="email-form-note">
+              By submitting, you consent to be contacted about SevioraAc updates. We reply within 2–3 working days during the pilot phase.
+            </p>
+          </form>
         </section>
       </div>
     </main>
