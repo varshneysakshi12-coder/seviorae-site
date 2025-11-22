@@ -1,55 +1,118 @@
-/* ========== Ultra-Luxury Token System ========== */
+/* ========== 1. ULTRA-LUXURY TOKEN SYSTEM ========== */
 :root {
-  /* Colors */
-  --sev-bg: #F9F7F5; /* Warmer, cleaner off-white */
-  --sev-text: #1C1B1A; /* Soft black, not harsh #000 */
-  --sev-gold: #BFA065; /* Muted metallic gold */
-  --sev-gold-hover: #A3864F;
-  --sev-blush: #EBDAD4;
-  --sev-surface: rgba(255, 255, 255, 0.65); /* Glass base */
-  --sev-border: rgba(191, 160, 101, 0.2); /* Subtle gold borders */
-  --sev-ink: #0F1216;
+  /* --- ATMOSPHERE: Organic Luxury --- */
+  --sev-bg: #F7F5F2;
+  
+  /* Text: "Warm Obsidian" */
+  --sev-ink: #1C1B1A;
+  --sev-text: #2D2A26;
+  --sev-gray-medium: #6B665F;
+  --sev-gray-light: #E5E0D8;
+  
+  /* The Brand Gold: "Antique Brass" */
+  --sev-gold: #B08D55;
+  --sev-gold-hover: #8C6D3D;
+  
+  /* Glass Effect Base */
+  --sev-surface: rgba(255, 255, 255, 0.60);
+  --sev-border: rgba(176, 141, 85, 0.2);
+  --sev-shadow: rgba(17, 24, 39, 0.08);
+  --sev-white: #FFFFFF;
   
   /* Typography */
-  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
 
   /* Spacing */
   --container-width: 1200px;
   --header-height: 80px;
+
+  /* --- SKU IDENTITY TOKENS (Defaults) --- */
+  --sku-accent: var(--sev-gold);
+  --sku-bg-soft: #F3E7DC;
+  --sku-bg-deep: #E8C9C0;
 }
 
-/* ========== Reset & Base ========== */
-*, *::before, *::after { box-sizing: border-box; }
+/* ========== 2. GLOBAL RESET & BASE ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0;
   min-height: 100vh;
   font-family: var(--font-sans);
   color: var(--sev-text);
   background-color: var(--sev-bg);
-  line-height: 1.7; /* Looser leading for luxury */
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  
+  /* TEXTURE: Subtle Grain */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
   color: var(--sev-ink);
-  font-weight: 400; /* Luxury is often thinner */
-  margin-top: 0;
+  font-weight: 400;
   line-height: 1.15;
+  margin-top: 0;
 }
 
-p { margin-bottom: 1.5rem; color: #4A4A4A; font-weight: 300; }
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
 
-a { color: var(--sev-text); text-decoration: none; transition: color 0.3s ease; }
-img { max-width: 100%; height: auto; display: block; }
-ul { list-style: none; padding: 0; margin: 0; }
+a {
+  color: var(--sev-ink);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-/* ========== Layout ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A11y skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 1rem;
+  background: var(--sev-ink);
+  color: #fff;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* Layout wrappers */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   width: 100%;
   max-width: var(--container-width);
@@ -57,17 +120,20 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 0 1.5rem;
 }
 
-/* ========== Header (Glass Effect) ========== */
+/* ========== 3. HEADER & NAVIGATION (Fixed) ========== */
+
 .site-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: var(--header-height);
-  z-index: 100;
-  background: rgba(249, 247, 245, 0.8);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; /* High Z-Index to stay on top */
+  background-color: rgba(247, 245, 242, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, background 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  height: var(--header-height);
 }
 
 .header-inner {
@@ -81,64 +147,128 @@ ul { list-style: none; padding: 0; margin: 0; }
   font-family: var(--font-serif);
   font-size: 1.8rem;
   letter-spacing: 0.05em;
-  font-weight: 600;
+  text-transform: uppercase;
   color: var(--sev-ink);
+  position: relative;
+  z-index: 102; /* Above mobile menu */
 }
 
-/* Navigation */
-.nav-list { display: flex; gap: 2.5rem; }
+/* Desktop Nav */
+.site-nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+}
 
 .nav-link {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   position: relative;
-  opacity: 0.7;
+  padding-bottom: 4px;
+  color: var(--sev-text);
 }
-
-.nav-link:hover, .nav-link--active { opacity: 1; }
 
 .nav-link::after {
-  content: ''; position: absolute; bottom: -4px; left: 50%;
-  width: 0; height: 1px; background: var(--sev-gold);
-  transition: all 0.3s ease; transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 1px;
+  background-color: var(--sku-accent);
+  transition: width 0.3s ease;
 }
 
-.nav-link:hover::after { width: 100%; }
+.nav-link:hover::after,
+.nav-link--active::after {
+  width: 100%;
+}
 
-/* Mobile Toggle */
+/* Mobile Nav Toggle (The Hamburger) */
 .nav-toggle {
-  display: none;
-  background: none; border: none; cursor: pointer;
-  flex-direction: column; gap: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 102; /* Above mobile menu */
 }
+
 .nav-toggle-bar {
-  width: 24px; height: 1px; background: var(--sev-ink);
-  transition: 0.3s;
+  width: 24px;
+  height: 2px;
+  background-color: var(--sev-ink);
+  transition: all 0.3s ease;
+  margin-left: auto; /* Aligns bars to the right */
 }
 
-/* ========== Mobile Nav Overlay ========== */
+/* Mobile Nav Panel - FIXED */
 .mobile-nav {
-  position: fixed; inset: 0; background: var(--sev-bg);
-  z-index: 90; padding-top: var(--header-height);
-  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Force full screen height */
+  background-color: #F7F5F2; /* Hardcoded hex to ensure opacity */
+  z-index: 101; /* Between Header(100) and Toggle(102) */
+  padding-top: calc(var(--header-height) + 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
+  /* Hidden State */
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.mobile-nav.open { transform: translateX(0); }
+
+/* Visible State */
+.mobile-nav.open {
+  transform: translateX(0);
+  /* Removed opacity transition to prevent "Empty" look bug */
+}
+
 .mobile-nav-list {
-  display: flex; flex-direction: column; align-items: center; gap: 2rem;
-  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  overflow-y: auto;
+  padding-bottom: 4rem;
 }
+
 .mobile-nav-link {
-  font-family: var(--font-serif); font-size: 2rem; color: var(--sev-ink);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--sev-ink);
+  text-decoration: none;
 }
 
-@media (max-width: 900px) {
-  .site-nav { display: none; }
-  .nav-toggle { display: flex; }
+.mobile-nav-link--active {
+  color: var(--sev-gold);
+  font-style: italic;
 }
 
-/* ========== Main Sections ========== */
-.site-main { padding-top: var(--header-height); }
+/* Desktop Breakpoint */
+@media (min-width: 900px) {
+  .site-nav { display: block; }
+  .nav-toggle { display: none; }
+  .mobile-nav { display: none !important; }
+}
+
+/* ========== 4. MAIN CONTENT ========== */
+.site-main {
+  padding-top: var(--header-height);
+  flex: 1 0 auto;
+}
 
 .home-section {
   padding: 5rem 0;
@@ -146,13 +276,12 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .section-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem;
+  max-width: 48rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 1rem;
 }
 
@@ -161,34 +290,138 @@ ul { list-style: none; padding: 0; margin: 0; }
   color: #666;
 }
 
-/* ========== Footer ========== */
+/* ========== 5. FOOTER ========== */
 .site-footer {
-  background: #F0EBE5;
+  margin-top: auto;
+  border-top: 1px solid var(--sev-gray-light);
+  background-color: #F0EBE5;
   padding: 4rem 0 2rem;
-  border-top: 1px solid var(--sev-border);
-}
-.footer-inner {
-  display: grid; gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.footer-heading {
-  font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
-  margin-bottom: 1.5rem; opacity: 0.5;
-}
-.footer-list a { display: block; margin-bottom: 0.8rem; font-size: 0.95rem; }
-.footer-bottom {
-  margin-top: 4rem; padding-top: 2rem;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  text-align: center; font-size: 0.85rem; color: #888;
 }
 
-/* ========== Utility Animation Classes (used by JS) ========== */
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-heading {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--sev-gray-medium);
+  margin-bottom: 1rem;
+}
+
+.footer-list li { margin-bottom: 0.5rem; }
+.footer-list a { font-size: 0.9rem; color: var(--sev-text); }
+.footer-list a:hover { color: var(--sku-accent); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--sev-gray-medium);
+}
+
+/* ========== 6. UTILITIES & ANIMATION ========== */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ========== 7. RESTORED LEGACY STYLES (Fixes Safety Strip) ========== */
+
+/* Restores the layout for the Safety Box */
+.safety-strip {
+  margin: 4rem 0;
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  /* Background color is handled by components.css gradients */
+}
+
+.safety-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.safety-list {
+  margin: 1.5rem 0 0;
+  padding-left: 1.2rem;
+  list-style: disc; /* Ensure bullets appear */
+  color: var(--sev-text);
+}
+
+.safety-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* Restores layout for Contact/Email Forms */
+.email-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.email-form-row--stacked {
+  flex-direction: column;
+}
+
+@media (min-width: 720px) {
+  .email-form-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .email-form-row--stacked {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Restores Product Page Layout Grids */
+.product-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .product-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+}
+
+.product-section-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--sev-text);
+  margin-bottom: 2rem;
+}
+
+.product-section-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* ========== 8. SKU IDENTITY SYSTEM ========== */
+[data-theme="acne"] { --sku-accent: #5C755E; --sku-bg-soft: #E6EBE7; --sku-bg-deep: #C8D6CB; }
+[data-theme="pigment"] { --sku-accent: #B36A3E; --sku-bg-soft: #FDF3EB; --sku-bg-deep: #F0DBC9; }
+[data-theme="oily"] { --sku-accent: #5B7586; --sku-bg-soft: #F0F4F7; --sku-bg-deep: #D5DEE5; }
+[data-theme="barrier"] { --sku-accent: #4B5D82; --sku-bg-soft: #EEF1F7; --sku-bg-deep: #D1D9E8; }
+[data-theme="aging"] { --sku-accent: #8F5E5E; --sku-bg-soft: #F7EEEE; --sku-bg-deep: #E6D0D0; }
