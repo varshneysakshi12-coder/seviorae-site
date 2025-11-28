@@ -73,6 +73,20 @@ body::before {
   overflow: hidden;
 }
 
+.product-card {
+  background-image: url("../images/texture-marble-oil-droplets.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.info-block {
+  background-image: url("../images/texture-marble-oil-droplets.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Glossy shine on hover */
 .card::before {
   content: "";
@@ -1630,6 +1644,10 @@ body::before {
   padding: 2.5rem;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 12px;
+  background-image: url("../images/texture-marble-oil-droplets.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .detail-heading {
@@ -1662,7 +1680,10 @@ body::before {
 .science-hero {
   padding: 8rem 0 5rem;
   text-align: center;
-  background: radial-gradient(circle at bottom, rgba(197, 164, 109, 0.1), transparent 60%);
+  background-image: url("../images/texture-marble-oil-droplets.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Process Grid (Timeline) */
